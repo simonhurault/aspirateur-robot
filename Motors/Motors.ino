@@ -85,26 +85,3 @@ struct Motors {
 
      
 };
-
-//Create the object motor that will be used for the robot
-Motors motor = Motors();
-
-void setup(){
-  // Configure the A output
-  Serial.begin(9600);
-}
-
-
-void loop(){
-  /*motor.move(1,255);
-  delay(5000);
-  motor.stop();
-  delay(5000); */
-  motor.init();
-  motor.turn(80);
-  delay(5000);
-  /*
-  motor.stop();
-  delay(3000);
-  */
-}
