@@ -76,7 +76,7 @@ motors.stop();
 
 `Motors` is used under the [creative commons](https://creativecommons.org/licenses/by-nc-sa/2.5/deed.fr) license.
 
-This library was created by Simon Hurault.
+This library was created by [Simon Hurault](https://github.com/simonhurault).
 
 
 
