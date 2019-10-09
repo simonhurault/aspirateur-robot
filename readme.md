@@ -45,7 +45,7 @@ How to use?
 -Link + and - of the motors to the motor shield
 -Supply the motor shield between 7 and 9V
 
-*** Do not use the 3, 12, 9, 11, 13, 8, A0 and A1 pin in the code. They are reserved to run the motor shield ***
+***Do not use the 3, 12, 9, 11, 13, 8, A0 and A1 pin in the code. They are reserved to run the motor shield***
 
 
 ## License
