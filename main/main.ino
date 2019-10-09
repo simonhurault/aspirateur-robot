@@ -34,7 +34,7 @@ int get_distance()
 void setup() {
   pinMode(EMITTER_PIN, OUTPUT);
   pinMode(RECEIVER_PIN, INPUT);
-  Serial.begin(9600);
+  randomSeed(analogRead(3));
 
 }
 
@@ -43,12 +43,11 @@ void loop() {
   {
     motors.stop();
     delay(1000);
-    motors.turn(90);
-    delay(3000);
+    motors.turn(105);
+    delay(random(800,1500));
   }
   else
   {
-    motors.move(1,90);
+    motors.move(1,105 );
   }
-
 }
