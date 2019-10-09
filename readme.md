@@ -23,24 +23,24 @@ This project requires the following to run:
   
 ## Usage
 
-- Download [Git for Windows](https://gitforwindows.org/)
-- Clone the project : ``git clone https://github.com/simonhurault/aspirateur-robot.git``
-- Put the ``Motors`` folder into the librairies one in the arduino folder
+1. Download [Git for Windows](https://gitforwindows.org/)
+2. Clone the project : ``git clone https://github.com/simonhurault/aspirateur-robot.git``
+3. Put the ``Motors`` folder into the librairies one in the arduino folder
 
 How to use?
 
 ### The HC-SC04 captor
 
--Link the Echo pin to the 4 digital pin of the arduino
--Link the Trig pin to the 2 digital pin of the arduino
--Supply the captor between 3.3 and 5V
+1. Link the Echo pin to the 4 digital pin of the arduino
+2. Link the Trig pin to the 2 digital pin of the arduino
+3. Supply the captor between 3.3 and 5V
 
 ### DC motors
 
--Link + and - of the motors to the motor shield
--Supply the motor shield between 7 and 9V
+1. Link + and - of the motors to the motor shield
+2. Supply the motor shield between 7 and 9V
 
-***Do not use the 3, 12, 9, 11, 13, 8, A0 and A1 pin in the code. They are reserved to run the motor shield***
+**Do not use the _3, 12, 9, 11, 13, 8, A0 and A1_ pin in the code. They are reserved to run the motor shield**
 
 
 ## License
