@@ -1,5 +1,4 @@
 # Motors
-==========
 
 This is a library for controling 2 DC motors for robot.
 
@@ -10,7 +9,6 @@ motors.turn(255);   //make the robot turn by making the right wheel go frontward
 ```
 
 ## Table of Contents
------------------
 
   * [Requirements](#requirements)
   * [Usage](#usage)
@@ -18,7 +16,6 @@ motors.turn(255);   //make the robot turn by making the right wheel go frontward
 
 
 ## Requirements
-------------
 
 Motors requires the following to run:
 
@@ -28,7 +25,6 @@ Motors requires the following to run:
   
   
 ## Usage
------
 
 - Put the Motors folder on the librairies one into the arduino folder.
 - Then use :
@@ -76,9 +72,9 @@ motors.stop();
 ```
 
 ## License
--------
 
-Motors is used under the [creative commons](https://creativecommons.org/licenses/by-nc-sa/2.5/deed.fr) license.
+
+`Motors` is used under the [creative commons](https://creativecommons.org/licenses/by-nc-sa/2.5/deed.fr) license.
 This library was created by Simon Hurault.
 
 
