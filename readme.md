@@ -47,4 +47,5 @@ How to use?
 
 
 This project is used under the [creative commons](https://creativecommons.org/licenses/by-nc-sa/2.5/deed.fr) license.
+
 It was created by [Polytech Montpellier](https://www.polytech.umontpellier.fr/) students.
