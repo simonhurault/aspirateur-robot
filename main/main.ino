@@ -8,8 +8,8 @@ Motors motors; //Creation of a Motors object to control the 2
 
 
 /*
- * This function allow you the get the distance between the captor and the robot
- * Output : the distance
+ * This function allows you the get the distance between the captor and an obstacle
+ * Output : the distance between captor and obstacle(int)
  */
 int get_distance()
 {
@@ -39,14 +39,14 @@ void setup() {
 }
 
 void loop() {
-  if(get_distance()<= 10)
+  if(get_distance()<= 10)    //if the robot will met an obstacle we turn
   {
     motors.stop();
     delay(1000);
     motors.turn(105);
     delay(random(800,1500));
   }
-  else
+  else                      //else we go forward
   {
     motors.move(1,105 );
   }

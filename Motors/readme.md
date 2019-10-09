@@ -1,6 +1,6 @@
 # Motors
 
-This is a library for controling 2 DC motors for robot.
+This is a library for controling 2 DC motors to move a robot.
 
 ```cpp
 motors.move(1,105); //make the motors go forward at 105 speed
