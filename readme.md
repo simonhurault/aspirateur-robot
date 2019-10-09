@@ -23,14 +23,9 @@ This project requires the following to run:
   
 ## Usage
 
--Download [Git for Windows](https://gitforwindows.org/)
--Clone the project : ``git clone https://github.com/simonhurault/aspirateur-robot.git``
--Put the ``Motors`` folder into the librairies one in the arduino folder
-
--Link the Echo pin of the captor to the 4 digital pin of the arduino
--Link the Trig pin of the captor to the 2 digital pin of the arduino
--Supply the captor
-
+- Download [Git for Windows](https://gitforwindows.org/)
+- Clone the project : ``git clone https://github.com/simonhurault/aspirateur-robot.git``
+- Put the ``Motors`` folder into the librairies one in the arduino folder
 
 How to use?
 
