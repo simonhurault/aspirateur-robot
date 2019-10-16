@@ -3,9 +3,7 @@
 #define RECEIVER_PIN 4
 #include <Motors.h>
 
-
-Motors motors; //Creation of a Motors object to control the 2
-
+Motors motors = Motors(); //Creation of a Motors object to control the 2
 
 /*
  * This function allows you the get the distance between the captor and an obstacle
@@ -34,20 +32,21 @@ int get_distance()
 void setup() {
   pinMode(EMITTER_PIN, OUTPUT);
   pinMode(RECEIVER_PIN, INPUT);
+  Serial.begin(9600);
   randomSeed(analogRead(3));
-
 }
 
 void loop() {
-  if(get_distance()<= 10)    //if the robot will met an obstacle we turn
+  if(get_distance()<= 15)    //if the robot will met an obstacle we turn
   {
     motors.stop();
     delay(1000);
-    motors.turn(105);
+    motors.turn(110);
     delay(random(800,1500));
+    
   }
   else                      //else we go forward
   {
-    motors.move(1,105 );
+    motors.move(1,110 );
   }
 }

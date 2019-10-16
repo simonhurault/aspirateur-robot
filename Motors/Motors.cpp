@@ -5,22 +5,24 @@
 Motors::Motors()
 {
   //pins for the A motor
-  int PWM_A = 3;
-  int DIR_A = 12;
-  int BRAKE_A = 9;
-  int SNS_A  = A0;
+  PWM_A = 3;
+  DIR_A = 12;
+  BRAKE_A = 9;
+  SNS_A  = A0;
 
   //pins for the B motor
-  int PWM_B   = 11;
-  int DIR_B   = 13;
-  int BRAKE_B = 8;
-  int SNS_B   = A1;
+  PWM_B   = 11;
+  DIR_B   = 13;
+  BRAKE_B = 8;
+  SNS_B   = A1;
 
   pinMode(BRAKE_A, OUTPUT);  // Brake pin on channel A
   pinMode(DIR_A, OUTPUT);    // Direction pin on channel A
   pinMode(BRAKE_B, OUTPUT);  // Brake pin on channel B
   pinMode(DIR_B, OUTPUT);    // Direction pin on channel B
+  Serial.println("entre");
 }
+
 
 void Motors::move(int direction, int speed)
 {
@@ -36,6 +38,7 @@ void Motors::move(int direction, int speed)
      // setting the speed of the motors
      analogWrite(PWM_A, speed);
      analogWrite(PWM_B, speed); 
+	 Serial.println(PWM_A);
 }
 
 
@@ -61,3 +64,4 @@ void Motors::turn(int speed)
     analogWrite(PWM_B, speed);
     analogWrite(PWM_A, speed);
 }
+
