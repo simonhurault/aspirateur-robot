@@ -50,18 +50,34 @@ void Motors::stop()
 }
 
 
-void Motors::turn(int speed)
+void Motors::turn(char direction, int speed)
 {
-  // setting the brakes LOW disable motors brake
-    digitalWrite(BRAKE_A, LOW);
-    digitalWrite(BRAKE_B, LOW);
-    
-    // setting the direction of the motors
-    digitalWrite(DIR_A, HIGH);
-    digitalWrite(DIR_B, LOW);
+	if (direction == 'L')
+	{
+		// setting the brakes LOW disable motors brake
+		digitalWrite(BRAKE_A, LOW);
+		digitalWrite(BRAKE_B, LOW);
 
-    // setting the speed to its "speed" value
-    analogWrite(PWM_B, speed);
-    analogWrite(PWM_A, speed);
+		// setting the direction of the motors
+		digitalWrite(DIR_A, HIGH);
+		digitalWrite(DIR_B, LOW);
+
+		// setting the speed to its "speed" value
+		analogWrite(PWM_B, speed);
+		analogWrite(PWM_A, speed);
+	}
+	else if (direction == 'R')
+	{
+		// setting the brakes LOW disable motors brake
+		digitalWrite(BRAKE_A, LOW);
+		digitalWrite(BRAKE_B, LOW);
+
+		// setting the direction of the motors
+		digitalWrite(DIR_A, LOW);
+		digitalWrite(DIR_B, HIGH);
+
+		// setting the speed to its "speed" value
+		analogWrite(PWM_B, speed);
+		analogWrite(PWM_A, speed);
+	}
 }
-
