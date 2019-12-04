@@ -14,7 +14,7 @@ class Motors
   Motors(); 
   void move(int direction, int speed);
   void stop();
-  void turn(int speed);
+  void turn(char direction, int speed);
 
   private:
   int PWM_A, DIR_A, BRAKE_A, SNS_A;

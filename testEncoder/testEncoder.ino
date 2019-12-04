@@ -79,6 +79,11 @@ void setup()
   // sur fronts montants : RISING
   attachInterrupt(digitalPinToInterrupt(interuptPin), reagir, RISING);
   attachInterrupt(digitalPinToInterrupt(interuptPinB), reagirB, RISING);
+  
+  pinMode(BRAKE_A, OUTPUT);  // Brake pin on channel A
+  pinMode(DIR_A, OUTPUT);    // Direction pin on channel A
+  pinMode(BRAKE_B, OUTPUT);  // Brake pin on channel B
+  pinMode(DIR_B, OUTPUT);    // Direction pin on channel B
 }
 // Fin initialisation
 //-----------------------------------------------------------
@@ -91,7 +96,7 @@ void setup()
 // sinon afficher le résultat du comptage sur le port série
 void loop()
 {
-  while(comptTicsB < 200)
+  while(comptTics < 8570)
   {
     Serial.print("CompteurA ");
     Serial.println(comptTics);
@@ -99,7 +104,7 @@ void loop()
     Serial.println(comptTicsB);
     digitalWrite(BRAKE_A, LOW);
     digitalWrite(BRAKE_B, LOW);
-    digitalWrite(DIR_A, LOW);
+    digitalWrite(DIR_A, HIGH);
     digitalWrite(DIR_B, LOW);
     analogWrite(PWM_A, 100);
     analogWrite(PWM_B, 100);
@@ -150,3 +155,4 @@ void reagirB()
 
 
 // moteur droit 1 tic = 1,285mm 
+// 857 = 360°

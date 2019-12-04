@@ -1,7 +1,14 @@
-// Define Trig and Echo pin:
-#define EMITTER_PIN 2
-#define RECEIVER_PIN 4
 #include <Motors.h>
+// Define Trig and Echo pin:
+
+#define EMITTER_PIN_RIGHT 2
+#define RECEIVER_PIN_RIGHT 4
+
+#define EMITTER_PIN_LEFT 7
+#define RECEIVER_PIN_LEFT 10
+
+#define DISTANCE_MAX 15
+
 
 Motors motors = Motors(); //Creation of a Motors object to control the 2
 
@@ -9,44 +16,76 @@ Motors motors = Motors(); //Creation of a Motors object to control the 2
  * This function allows you the get the distance between the captor and an obstacle
  * Output : the distance between captor and obstacle(int)
  */
-int get_distance()
+int get_distance(int emitter , int receiver)
 {
   long duration;
   int distance;
   
-  digitalWrite(EMITTER_PIN, LOW);
+  digitalWrite(emitter, LOW);
   delayMicroseconds(5);
   
-  digitalWrite(EMITTER_PIN, HIGH);
+  digitalWrite(emitter, HIGH);
   delayMicroseconds(10);
-  digitalWrite(EMITTER_PIN, LOW);
+  digitalWrite(emitter, LOW);
   
-  duration = pulseIn(RECEIVER_PIN, HIGH);
+  duration = pulseIn(receiver, HIGH);
   
   distance= duration*0.034/2;
   return distance >= 2? distance : 0; // the captor isn't precise for a distance less than 2cm
 }
 
+char needToTurn()
+{
+   if(get_distance(EMITTER_PIN_RIGHT , RECEIVER_PIN_RIGHT) <= DISTANCE_MAX)
+     return 'R';
+    
+   if(get_distance(EMITTER_PIN_LEFT , RECEIVER_PIN_LEFT) <= DISTANCE_MAX)
+      return 'L';
+
+   return 'M';
+}
 
 
 void setup() {
-  pinMode(EMITTER_PIN, OUTPUT);
-  pinMode(RECEIVER_PIN, INPUT);
-  Serial.begin(9600);
+  //pinMode(EMITTER_PIN_MID, OUTPUT);
+  pinMode(EMITTER_PIN_RIGHT, OUTPUT);
+  pinMode(EMITTER_PIN_LEFT, OUTPUT);
+  
+  //pinMode(RECEIVER_PIN_MID, INPUT);
+  pinMode(RECEIVER_PIN_RIGHT, INPUT);
+  pinMode(RECEIVER_PIN_LEFT, INPUT);
+  
   randomSeed(analogRead(3));
+
+  switch(needToTurn())
+  {
+    case('R'):
+      motors.stop();
+      delay(1000);
+      motors.turn('L',100);
+      delay(random(800,1500));
+      motors.stop();
+      delayMicroseconds(10);
+      break;
+
+    case('L'):
+      motors.stop();
+      delay(1000);
+      motors.turn('R',100);
+      delay(random(800,1500));
+      motors.stop();
+      delayMicroseconds(10);
+      break;
+   
+    default:
+      motors.move(1, 100);
+      break;
+  }
 }
 
 void loop() {
-  if(get_distance()<= 15)    //if the robot will met an obstacle we turn
-  {
-    motors.stop();
-    delay(1000);
-    motors.turn(110);
-    delay(random(800,1500));
-    
-  }
-  else                      //else we go forward
-  {
-    motors.move(1,110 );
-  }
+  
+      
+   
 }
+    
