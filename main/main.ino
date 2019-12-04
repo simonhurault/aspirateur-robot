@@ -7,7 +7,7 @@
 #define EMITTER_PIN_LEFT 7
 #define RECEIVER_PIN_LEFT 10
 
-#define DISTANCE_MAX 17
+#define DISTANCE_MAX 15
 
 
 Motors motors = Motors(); //Creation of a Motors object to control the 2
@@ -56,29 +56,36 @@ void setup() {
   pinMode(RECEIVER_PIN_LEFT, INPUT);
   
   randomSeed(analogRead(3));
-}
 
-void loop() {
   switch(needToTurn())
   {
     case('R'):
       motors.stop();
       delay(1000);
-      motors.turn('L',110);
+      motors.turn('L',100);
       delay(random(800,1500));
+      motors.stop();
+      delayMicroseconds(10);
       break;
 
     case('L'):
       motors.stop();
       delay(1000);
-      motors.turn('R',110);
+      motors.turn('R',100);
       delay(random(800,1500));
+      motors.stop();
+      delayMicroseconds(10);
       break;
    
     default:
-      motors.move(1, 110);
+      motors.move(1, 100);
       break;
+  }
+}
+
+void loop() {
+  
       
-  }  
+   
 }
     

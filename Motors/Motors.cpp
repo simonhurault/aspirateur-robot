@@ -20,7 +20,6 @@ Motors::Motors()
   pinMode(DIR_A, OUTPUT);    // Direction pin on channel A
   pinMode(BRAKE_B, OUTPUT);  // Brake pin on channel B
   pinMode(DIR_B, OUTPUT);    // Direction pin on channel B
-  Serial.println("entre");
 }
 
 
