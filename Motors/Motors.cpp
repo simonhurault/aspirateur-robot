@@ -38,7 +38,6 @@ void Motors::move(int direction, int speed)
      // setting the speed of the motors
      analogWrite(PWM_A, speed);
      analogWrite(PWM_B, speed); 
-	 Serial.println(PWM_A);
 }
 
 

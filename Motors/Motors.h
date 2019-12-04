@@ -1,6 +1,6 @@
 /*
 * This library is under creative commons license. 
-* It was created by Simon Hurault
+* It was created by Simon Hurault, Reda Arifi and Quentin Rebuffat
 * This library allows you to control 2 DC motors to move a robot
 */
 
