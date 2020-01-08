@@ -164,14 +164,8 @@ void loop()
 
   distanceRetour = sqrt(pow(xPosition, 2) + pow(yPosition, 2));
 
-  if(yPosition == 0) // A voir plus tard pas bon
-  {
-    angleReturn = -90;
-  }
-  else
-  {
-    angleReturn = - teta -atan(xPosition/yPosition) - 45; // Angle that we need to turn to point the base
-  }
+  
+  angleReturn = 180 - teta + atan(yPosition/xPosition); // Angle that we need to turn to point the base
   Serial.print("angleReturn = ");
   Serial.println(angleReturn);
 

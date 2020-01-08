@@ -23,7 +23,7 @@ Motors::Motors()
 }
 
 
-void Motors::move(int direction, int speed)
+void Motors::move(int direction, int speed, int corrector)
 {
   // setting the brakes LOW disable motors brake
     digitalWrite(BRAKE_A, LOW);
@@ -35,8 +35,16 @@ void Motors::move(int direction, int speed)
 
     
      // setting the speed of the motors
-     analogWrite(PWM_A, speed);
-     analogWrite(PWM_B, speed); 
+	if (corrector + speed > 255)
+		analogWrite(PWM_A, 255);
+
+	else if(corrector + speed < 0)
+		analogWrite(PWM_A, 0);
+    
+	else
+		analogWrite(PWM_A, speed + corrector);
+
+    analogWrite(PWM_B, speed); 
 }
 
 
