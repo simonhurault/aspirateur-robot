@@ -3,7 +3,7 @@
 This is a library for controling 2 DC motors to move a robot.
 
 ```cpp
-motors.move(1,105); //make the motors go forward at 105 speed
+motors.move(1,105, -5); //make the motors go forward at 105 speed
 motors.stop();      //stop the motors
 motors.turn(255);   //make the robot turn by making the right wheel go frontward and the left wheel go backward at 255 speed
 ```
@@ -36,18 +36,19 @@ to add the library to your code.
 
 The `motors` object has the following methods.
 
-### `motors.move( int, int)`
+### `motors.move( int, int, int)`
 
 Make the 2 DC motors go in the same direction to allow the robot go gorward or backward.
 
 `int` is the direction. 0 is backward another number is forward.
 `int` is the speed. It must be between 0 and 255.
+`int` is the corrector of the speed that you want to give at the A motor to ensure the 2 wheels go at the same speed
 `return` is void.
 
 ```cpp
 //Example
-motors.move(1, 105); // make the DC motors go forward at 105 speed
-motors.move(0, 255); // make the DC motors go backward at 255 speed
+motors.move(1, 105, +8); // make the DC motors go forward at 105 speed
+motors.move(0, 255, -5); // make the DC motors go backward at 255 speed
 ```
 
 ### `motors.turn(int)`
@@ -76,7 +77,7 @@ motors.stop();
 
 `Motors` is used under the [creative commons](https://creativecommons.org/licenses/by-nc-sa/2.5/deed.fr) license.
 
-This library was created by [Simon Hurault](https://github.com/simonhurault).
+This library was created by [Simon Hurault](https://github.com/simonhurault) Quentin Rebuffat and Reda Arifi.
 
 
 

@@ -14,9 +14,9 @@ This project refers to the S5 polytech project. The objective is to create an au
 
 This project requires the following to run:
 
-  * [Arduino](https://www.arduino.cc/)
+  * [Arduino Uno/Mega](https://www.arduino.cc/)
   * [Arduino motor shield REV3](https://store.arduino.cc/arduino-motor-shield-rev3)
-  * [Arduino HC-SC04 ultrasonde detector](https://www.gotronic.fr/art-module-de-detection-us-hc-sr04-20912.htm)
+  * 2 [Arduino HC-SC04 ultrasonde detector](https://www.gotronic.fr/art-module-de-detection-us-hc-sr04-20912.htm)
   * 2 DC motors
   * 7-9V max 1A power supply
   
@@ -31,9 +31,15 @@ How to use?
 
 ### The HC-SC04 captor
 
+1)First sensor
 1. Link the Echo pin to the 4 digital pin of the arduino
 2. Link the Trig pin to the 2 digital pin of the arduino
-3. Supply the captor between 3.3 and 5V
+3. Supply the captor with 5V
+
+2) Secound sensor
+1. Link the Echo pin to the 4 digital pin of the arduino
+2. Link the Trig pin to the 2 digital pin of the arduino
+3. Supply the captor with 5V
 
 ### DC motors
 
